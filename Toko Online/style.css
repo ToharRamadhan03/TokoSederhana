@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Baloo Paaji 2", cursive;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  width: 100%;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+}
+
+header nav ul {
+  padding: 17px 20px;
+  display: flex;
+  list-style: none;
+}
+header nav ul li {
+  margin-left: 20px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+header .banner {
+  text-align: center;
+  padding: 10px 0;
+  background-color: black;
+}
+header .banner span {
+  font-size: 40px;
+  color: yellow;
+}
+header nav .input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #999;
+  border-radius: 20px;
+  height: 40px;
+  padding: 0 10px;
+  box-shadow: 1px 1px 10px transparent;
+  margin-right: 20px;
+}
+header nav .input-container .fa-search {
+  font-size: 20px;
+  color: #777;
+}
+header nav .input-container input[type="text"] {
+  border: none;
+  padding: 5px;
+  background-color: transparent;
+  color: white;
+  outline: none;
+}
+main {
+  margin-top: 20px;
+  height: 100px;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  grid-template-rows: 300px auto;
+  grid-template-areas:
+    "search items"
+    "desc items";
+  grid-gap: 10px;
+}
+.search {
+  grid-area: search;
+  border: 1px solid #aaa;
+  box-shadow: 1px 2px 3px 2px #333;
+  padding: 10px;
+}
+.search span {
+  font-size: 25px;
+}
+.search .filter-box {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+.search .fa-search {
+  font-size: 15px;
+}
+.search input[type="text"] {
+  border: none;
+  background-color: transparent;
+  font-size: 17px;
+  margin-left: 7px;
+}
+.search ul {
+  list-style: none;
+}
+.search ul li {
+  margin-top: 5px;
+  width: 90%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search ul li::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 6px solid black;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  right: 0;
+  cursor: pointer;
+}
+.desc {
+  grid-area: desc;
+  box-shadow: 1px 2px 3px 2px #333;
+  padding: 5px;
+}
+.desc span {
+  display: inline-block;
+}
+.desc button {
+  width: 90%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 7px 0;
+  border: 1px soldi #444;
+  cursor: pointer;
+  margin-top: 20px;
+  outline: none;
+}
+.items {
+  grid-area: items;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.items .item-card {
+  height: 320px;
+  width: 270px;
+  border: 1px solid black;
+  margin-top: 10px;
+  margin-left: 5px;
+  box-shadow: 1px 2px 3px 2px #333;
+  padding: 3px;
+  display: grid;
+  grid-template-columns: 150px auto;
+  grid-template-rows: 200px auto;
+  grid-template-areas:
+    "picture name"
+    "description description";
+  grid-gap: 2px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.items .item-card .image-container {
+  border: 1px solid black;
+  grid-area: picture;
+  background-image: url("https://source.unsplash.com/random/150x200");
+  background-repeat: no-repeat;
+}
+.items .item-card .item-name {
+  grid-area: name;
+  height: 200px;
+  width: 114px;
+  font-size: 20px;
+  word-wrap: break-word;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.items .item-card .item-description {
+  grid-area: description;
+  width: 263px;
+  display: flex;
+  flex-direction: column;
+}
+.items .item-card .item-description .desc-icon ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.items .item-card .item-description .desc-icon ul li {
+  list-style: none;
+  margin-left: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.items .item-card .item-description .desc-icon ul li i {
+  font-size: 10px;
+}
+.items .item-card .item-description .desc-icon ul li span {
+  margin-left: 2px;
+}
